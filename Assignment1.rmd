@@ -1,0 +1,148 @@
+---
+title: "Assignment1"
+author: "sudhar"
+date: "2024-07-10"
+output: html_document
+---
+
+```{r}
+library(ISLR)
+```
+
+
+```{r}
+data("Auto")
+dim(Auto)
+```
+```{r}
+print("mpg")
+range(Auto$mpg)
+
+print("cyclinders")
+range(Auto$cylinders)
+
+print("displacment")
+range(Auto$displacement)
+
+print("horsepower")
+range(Auto$horsepower)
+
+print("weight")
+range(Auto$weight)
+
+print("acceleration")
+range(Auto$acceleration)
+
+print("year")
+range(Auto$year)
+```
+```{r}
+print("Mean and Standard deviation for mpg")
+mean(Auto$mpg)
+sd(Auto$mpg)
+
+print("Mean and Standard deviation for cylinders")
+mean(Auto$cylinders)
+sd(Auto$cylinders)
+
+print("Mean and Standard deviation for displacement")
+mean(Auto$displacement)
+sd(Auto$displacement)
+
+print("Mean and Standard deviation for horsepower")
+mean(Auto$horsepower)
+sd(Auto$horsepower)
+
+print("Mean and Standard deviation for weight")
+mean(Auto$weight)
+sd(Auto$weight)
+
+print("Mean and Standard deviation for acceleration")
+mean(Auto$acceleration)
+sd(Auto$acceleration)
+```
+
+
+```{r}
+str(Auto)
+```
+```{r}
+na.omit (Auto)
+```
+```{r}
+Auto_set <- Auto[-(10:85), ]
+dim(Auto_set)
+```
+```{r}
+removed_Auto<-Auto[-10:-84,]
+removed_Auto
+```
+
+
+
+```{r}
+print("range,Mean and Standard deviation for mpg")
+range(removed_Auto$mpg)
+mean(removed_Auto$mpg)
+sd(removed_Auto$mpg)
+
+print("range,Mean and Standard deviation for cylinders")
+range(removed_Auto$cylinders)
+mean(removed_Auto$cylinders)
+sd(removed_Auto$cylinders)
+
+print("range,Mean and Standard deviation for displacement")
+range(removed_Auto$displacement)
+mean(removed_Auto$displacement)
+sd(removed_Auto$displacement)
+
+print("range,Mean and Standard deviation for horsepower")
+range(removed_Auto$horsepower)
+mean(removed_Auto$horsepower)
+sd(removed_Auto$horsepower)
+
+print("range,Mean and Standard deviation for weight")
+range(removed_Auto$weight)
+mean(removed_Auto$weight)
+sd(removed_Auto$weight)
+
+print("range,Mean and Standard deviation for acceleration")
+range(removed_Auto$acceleration)
+mean(removed_Auto$acceleration)
+sd(removed_Auto$acceleration)
+```
+
+
+```{r}
+
+
+plot(Auto$mpg, Auto$weight, xlab = "mpg", ylab = "weight", main = "Scatterplot of mpg vs. weight")
+
+
+plot(Auto$mpg, Auto$horsepower, xlab = "mpg", ylab = "horsepower", main = "Scatterplot of mpg vs. horsepower")
+
+
+boxplot(Auto$mpg ~ Auto$cylinders, xlab = "Number of cylinders", ylab = "mpg", main = "Boxplot of mpg by cylinders")
+
+
+```
+```{r}
+mean_mpg <- mean(Auto$mpg, na.rm = TRUE)  
+print(mean_mpg)
+```
+```{r}
+mean_weight <- mean(Auto$weight, na.rm = TRUE)  # Example: 'mpg' column
+print(mean_weight)
+```
+```{r}
+mean_mpg1 <- mean(Auto_set$mpg, na.rm = TRUE)  # Example: 'mpg' column
+print(mean_mpg1)
+```
+```{r}
+par(mfrow=c(2,2))
+plot(Auto$mpg,Auto$displacement)
+plot(Auto$mpg,Auto$horsepower)
+plot(Auto$mpg,Auto$weight)
+plot(Auto$mpg,Auto$acceleration)
+```
+
